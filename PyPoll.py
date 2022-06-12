@@ -10,8 +10,8 @@ file_to_load = os.path.join("Resources", "election_results.csv")
 #open txt file with with statement
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 #Write three counties to the txt file.
-with open(file_to_save, "w") as txt_file:
-    txt_file.write("Counties in the Election\n----------------------\nArapahoe\nDenver\nJefferson")
+#with open(file_to_save, "w") as txt_file:
+    #txt_file.write("Counties in the Election\n----------------------\nArapahoe\nDenver\nJefferson")
 
 #initialize variable/accumulator to 0
 total_votes = 0
@@ -56,11 +56,21 @@ with open(file_to_load) as election_data:
             
         #add candidates votes
         candidate_votes[candidate_name] += 1
+        
+
+with open(file_to_save,"w") as txt_file:
+    election_results = (f"Election Results\n---------------------------\nTotal Votes: {total_votes:,}\n---------------------------\n")
+    print(election_results, end="")
+    txt_file.write(election_results)
+
     #for loop to get percentage of total votes
     for candidate_name in candidate_votes:
         votes = candidate_votes[candidate_name]
         vote_percentage = float(votes) / float(total_votes) * 100
-        print(f"{candidate_name}: received {vote_percentage:.1f}% of the vote.")
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+        txt_file.write(candidate_results)
+
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
             winning_percentage = vote_percentage
@@ -71,6 +81,7 @@ with open(file_to_load) as election_data:
         f"Winning Vote Count: {winning_count:,}\n"
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"----------------------------\n")
+    txt_file.write(winning_candidate_summary)
     print(winning_candidate_summary)
 
 
