@@ -12,3 +12,5 @@ The purpose of this election audit analysis was to get the winning candidate bas
 *Diana DeGette had 73.8% of the votes with a total of 272,892.
 *Rayman Anthony Doane had 3.1% of the votes with a total of 11,606.
 *Diana DeGette won the election with 73.8% of the total votes which is 272,892 votes.
+## Summary
+The election results generated based on the data given showed a landslide victory for Diana DeGette. Diana had the majority of the vote with 73.8% with Charles Casper Stockham coming in second with 23% of the vote. AS for the counties the biggest contribitor was Denver county with the majority at 82.8% of the votes. based on this data and the three counties observed with the total votes coming in at 306,055 the winner can be declared to be Diana DeGette.
